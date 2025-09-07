@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "api:restore", "type": "shell", "options": { "cwd": "${workspaceFolder}/apps/api" }, "command": "dotnet restore" },
+    { "label": "api:run", "type": "shell", "dependsOn": "api:restore", "options": { "cwd": "${workspaceFolder}/apps/api" }, "command": "dotnet watch run" },
+    { "label": "web:install", "type": "shell", "options": { "cwd": "${workspaceFolder}/apps/web" }, "command": "npm install" },
+    { "label": "web:dev", "type": "shell", "dependsOn": "web:install", "options": { "cwd": "${workspaceFolder}/apps/web" }, "command": "npm run dev" }
+  ]
+}

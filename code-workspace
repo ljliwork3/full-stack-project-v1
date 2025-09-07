@@ -1,0 +1,14 @@
+{
+  "folders": [
+    { "path": "apps/api" },
+    { "path": "apps/web" }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/bin": true,
+      "**/obj": true,
+      "**/.next": true,
+      "**/node_modules": true
+    }
+  }
+}

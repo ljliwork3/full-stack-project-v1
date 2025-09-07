@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    { "name": "Run API + Web", "configurations": ["API (C#)", "Web (Next.js)"] }
+  ],
+  "configurations": [
+    {
+      "name": "API (C#)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "api:restore",
+      "program": "${workspaceFolder}/apps/api/bin/Debug/net8.0/Api.dll",
+      "cwd": "${workspaceFolder}/apps/api",
+      "env": { "ASPNETCORE_ENVIRONMENT": "Development" },
+      "justMyCode": true
+    },
+    {
+      "name": "Web (Next.js)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/apps/web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}
