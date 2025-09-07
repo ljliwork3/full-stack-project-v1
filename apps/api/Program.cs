@@ -30,6 +30,9 @@ app.UseHttpsRedirection();
 // Use CORS
 app.UseCors();
 
+app.MapGet("/hello", () => "Hello World!")
+    .WithName("GetHello");
+
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
